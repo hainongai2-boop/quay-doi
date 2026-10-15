@@ -1,0 +1,63 @@
+QUAY ĐỘI v1.0.1 — HƯỚNG DẪN CÀI VÀO ĐIỆN THOẠI
+==================================================
+
+Thư mục này là một app web cài được (PWA). Để cài ra màn hình chính
+và chạy offline, app cần được mở từ một link https một lần.
+Làm 1 lần duy nhất, mất khoảng 5 phút, miễn phí.
+
+--------------------------------------------------
+BƯỚC 1 — ĐƯA APP LÊN WEB (chọn 1 cách)
+--------------------------------------------------
+
+Cách A — Netlify Drop (nhanh nhất, nên làm trên máy tính)
+  1. Giải nén file zip, được thư mục "quay-doi".
+  2. Mở https://app.netlify.com/drop
+  3. Kéo cả thư mục "quay-doi" thả vào trang.
+  4. Đăng nhập / tạo tài khoản miễn phí khi được hỏi
+     (để link không bị xóa).
+  5. Được một link dạng https://ten-gi-do.netlify.app
+     -> đổi tên cho dễ nhớ trong Site settings nếu muốn.
+
+Cách B — GitHub Pages (nếu đã có tài khoản GitHub)
+  1. Tạo repository mới, ví dụ "quay-doi".
+  2. Add file -> Upload files -> chọn toàn bộ file trong thư mục.
+  3. Settings -> Pages -> Source: "Deploy from a branch",
+     Branch: main, thư mục / (root) -> Save.
+  4. Sau 1–2 phút có link https://<tên-bạn>.github.io/quay-doi/
+
+--------------------------------------------------
+BƯỚC 2 — CÀI VÀO ĐIỆN THOẠI
+--------------------------------------------------
+
+Android:
+  Mở link bằng Chrome -> bấm ⋮ -> "Cài đặt ứng dụng"
+  (hoặc "Thêm vào màn hình chính").
+  Trong app, tab Cài đặt cũng có nút "Cài app ngay".
+
+iPhone:
+  Mở link bằng Safari -> nút Chia sẻ -> "Thêm vào MH chính" -> Thêm.
+
+Sau khi cài: mở app từ biểu tượng "Quay Đội". Từ đó trở đi chạy
+offline hoàn toàn, không cần mạng.
+
+--------------------------------------------------
+CHUYỂN DỮ LIỆU TỪ BẢN CŨ (file HTML trước đây)
+--------------------------------------------------
+  1. Mở bản cũ -> tab Sao lưu -> "Sao chép mã sao lưu".
+  2. Mở app mới -> tab Cài đặt -> "Khôi phục từ mã" -> dán -> Khôi phục.
+  Người chơi, đội, tên trong game và lịch sử tỉ số được chuyển sang.
+
+--------------------------------------------------
+CẬP NHẬT PHIÊN BẢN MỚI
+--------------------------------------------------
+  Thay các file trên host bằng bản mới (Netlify: kéo thả lại vào
+  mục Deploys; GitHub: upload đè). App trên điện thoại tự cập nhật
+  ở lần mở thứ hai sau đó. Dữ liệu không bị mất.
+
+--------------------------------------------------
+LƯU Ý
+--------------------------------------------------
+- Dữ liệu chỉ nằm trên điện thoại của bạn, không gửi đi đâu.
+- Nên "Tải file sao lưu" sau mỗi buổi đá (tab Cài đặt).
+- Vẫn có thể mở trực tiếp index.html để dùng offline, nhưng cách đó
+  không cài thành app được.

@@ -1,0 +1,33 @@
+{
+  "name": "Quay Đội — bốc thăm đội & tỉ số",
+  "short_name": "Quay Đội",
+  "description": "Bốc thăm đội, ghi tỉ số và tạo poster cho những trận đá game cùng bạn bè. Chạy offline.",
+  "lang": "vi",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a120e",
+  "theme_color": "#0a120e",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

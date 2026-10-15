@@ -1,0 +1,16 @@
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    b=p.chromium.launch(); ctx=b.new_context(viewport={'width':390,'height':844},service_workers='block')
+    pg=ctx.new_page(); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e))); pg.on('dialog',lambda d:d.accept())
+    pg.goto('http://localhost:8765/'); pg.wait_for_timeout(300)
+    pg.go_back(); pg.wait_for_timeout(300); print('onboarding vẫn mở sau back:', pg.is_visible('#ob0'))
+    pg.fill('#ob0','A'); pg.fill('#ob1','B'); pg.click('#obGo'); pg.wait_for_timeout(300)
+    pg.click('[data-tab="hist"]'); pg.click('[data-tab="teams"]'); pg.wait_for_timeout(200)
+    pg.go_back(); pg.wait_for_timeout(300); print('back từ tab Đội → tab Quay:', pg.is_visible('#tab-spin'))
+    pg.click('#p0 .pname'); pg.wait_for_timeout(200); print('mở bảng người chơi:', pg.is_visible('#modal'))
+    pg.go_back(); pg.wait_for_timeout(300); print('back đóng bảng:', not pg.is_visible('#modal'), '| vẫn ở tab Quay:', pg.is_visible('#tab-spin'))
+    pg.click('[data-tab="set"]'); pg.click('#resetAll'); pg.click('#raNo'); pg.wait_for_timeout(300)
+    print('đóng bảng bằng nút Hủy, còn ở Cài đặt:', pg.is_visible('#tab-set'))
+    pg.go_back(); pg.wait_for_timeout(300); print('back tiếp → tab Quay:', pg.is_visible('#tab-spin'))
+    pg.keyboard.press('Escape')
+    print('errors', errs); b.close()
